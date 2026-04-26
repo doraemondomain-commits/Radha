@@ -694,11 +694,11 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
     # ── Categories ────────────────────────────────────────────
     log("Fetching WordPress categories...")
     categories = fetch_wp_categories() if not dry_run else [
-        {"id": 1, "name": "Krishna Photography"},
-        {"id": 2, "name": "Temple Photography"},
-        {"id": 3, "name": "Festival Photography"},
-        {"id": 4, "name": "Portrait Photography"},
-        {"id": 5, "name": "Photography"},
+        {"id": 1, "name": "Radha Krishna Wallpaper"},
+        {"id": 2, "name": "Radha Krishna Photo"},
+        {"id": 3, "name": "Radha Krishna Images"},
+        {"id": 4, "name": "Radha Krishna Drawing"},
+        {"id": 5, "name": "Radha Rani"},
     ]
 
     if not categories:
@@ -747,9 +747,9 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
 
     # ── Fetch recent posts for internal linking (once per run) ───
     recent_posts_for_links = fetch_recent_posts_for_links(count=5) if not dry_run else [
-        {"title": "Krishna Photography", "link": "https://radhakrishnaphoto.in/krishna-photography/"},
-        {"title": "Temple Gallery", "link": "https://radhakrishnaphoto.in/temple-gallery/"},
-        {"title": "Festival Moments", "link": "https://radhakrishnaphoto.in/festival-moments/"},
+        {"title": "Radha Krishna Photo", "link": "https://radhakrishnaphoto.in/radha-krishna-love-black-wallpaper/"},
+        {"title": "Radha Rani", "link": "https://radhakrishnaphoto.in/radha-rani-photo-hd-1080p/"},
+        {"title": "Radha Krishna Wallpaper", "link": "https://radhakrishnaphoto.in/radha-krishna-wallpaper/"},
     ]
 
     # ── Track in-run progress per keyword ────────────────────

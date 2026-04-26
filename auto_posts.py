@@ -30,16 +30,16 @@ from datetime import datetime, timedelta
 # CONFIGURATION
 # ============================================================
 
-WP_URL             = "https://pixlino.com//wp-json/wp/v2"
+WP_URL             = "https://radhakrishnaphoto.in/wp-json/wp/v2"
 USERNAME           = os.environ.get("WP_USERNAME", "your_wp_username")
 APP_PASSWORD       = os.environ.get("WP_APP_PASSWORD", "your_app_password")
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "your_token")
 TELEGRAM_CHAT_ID   = os.environ.get("TELEGRAM_CHAT_ID", "your_chat_id")
 
 # --- Post settings ---
-POSTS_PER_RUN      = 2            # how many posts to publish per run (per day)
+POSTS_PER_RUN      = 3            # how many posts to publish per run (per day)
 POSTS_PER_KEYWORD  = 5            # how many posts to create for each keyword (uses different title templates)
-IMAGES_PER_HEADING = 10           # images per heading
+IMAGES_PER_HEADING = 25           # images per heading
 POST_STATUS        = "publish"      # ← TEST MODE: saving as draft (change back to "publish" for production)
 
 # --- Random gap options (in seconds) ---

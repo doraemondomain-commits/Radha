@@ -1,0 +1,38 @@
+# Meta description templates separated by ---
+# Use {keyword} as placeholder for the seed keyword
+
+Explore beautiful {keyword} photography gallery. Professional high-quality images showcasing divine {keyword} moments. Perfect for spiritual inspiration and artistic appreciation.
+
+---
+
+Stunning {keyword} photography collection featuring professional images of {keyword}. Browse our gallery of sacred and artistic {keyword} photographs.
+
+---
+
+Discover divine {keyword} photography. High-quality gallery of {keyword} images capturing spiritual beauty and sacred moments. Professional photography collection.
+
+---
+
+{keyword} photography gallery featuring professional images. Explore stunning {keyword} photographs showcasing spirituality and artistic excellence.
+
+---
+
+Premium {keyword} photography collection. View professional {keyword} images celebrating spiritual beauty, temple art, and sacred moments.
+
+---
+
+Sacred {keyword} photography gallery with professional high-quality images. Explore beautiful {keyword} photographs capturing divine moments and spiritual essence.
+
+---
+
+Professional {keyword} photography gallery. Beautiful high-quality images of {keyword} showcasing sacred moments, temples, and spiritual celebrations.
+
+---
+
+{keyword} photography collection - explore professional images of {keyword}. High-quality gallery featuring spiritual beauty and sacred moments.
+
+---
+
+Beautiful {keyword} photography featuring professional images. Browse our gallery of stunning {keyword} photographs celebrating spirituality and divine artistry.
+
+---

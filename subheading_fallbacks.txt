@@ -1,0 +1,13 @@
+# Subheading fallback sets — one set per line, comma separated
+# These are used as fallback H2 subheadings if Google search fails
+
+Best Collection, Professional Gallery, Stunning Images, Sacred Moments, Artistic Expression
+Photography Gallery, Professional Collection, Beautiful Moments, High Quality, Curated Images
+Temple Photography, Festival Celebration, Spiritual Art, Devotional Moments, Sacred Beauty
+Divine Photography, Professional Shots, Gallery Collection, Artistic Vision, Curated Selection
+Stunning Photography, Gallery Collection, Professional Images, Sacred Art, Beautiful Moments
+Photography Collection, Artistic Gallery, Professional Showcase, Divine Beauty, Sacred Moments
+Festival Photography, Temple Gallery, Spiritual Photography, Devotional Art, Sacred Images
+Premium Photography, Professional Gallery, Artistic Collection, Divine Moments, Beautiful Shots
+Sacred Photography, Spiritual Gallery, Professional Collection, Artistic Moments, Divine Beauty
+Beautiful Collection, Professional Photography, Gallery Showcase, Artistic Expression, Sacred Moments

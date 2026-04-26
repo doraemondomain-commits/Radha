@@ -1,4 +1,6 @@
-450+ {kw} 
+450+ {kw}
+New {kw}
+New 299+ {kw}
 Best 999+ {kw}
 [Latest] 888+ {kw}
 {999+} {kw}
@@ -6,5 +8,4 @@ Best 999+ {kw}
 [Download] 555+ {kw} 
 Latest 555+ {kw}
 [Top] 999+ {kw}
-[2026] Latest {kw}
-
+Latest {kw}

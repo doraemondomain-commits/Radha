@@ -254,7 +254,7 @@ def build_telegram_summary(stats):
         lines.append("")
 
     lines.append("─────────────────────")
-    lines.append("<i>pixlino.com | Auto Posts v20</i>")
+    lines.append("<i>radhakrishnaphoto.in | Auto Posts v20</i>")
 
     return "\n".join(lines)
 
@@ -592,7 +592,7 @@ def fetch_subheadings_from_google(keyword, count=5):
     if len(result) < count:
         fallback_sets = load_subheading_fallbacks()
         if not fallback_sets:
-            fallback_sets = [["Stylish", "Cute", "Aesthetic", "Attitude", "Sad"]]
+            fallback_sets = [["Love", "Cute", "Krishna", "Radha", "Asthetic"]]
 
         modifier_set = random.choice(fallback_sets)
 
@@ -951,10 +951,10 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
     # ── Categories ────────────────────────────────────────────
     log("Fetching WordPress categories...")
     categories = fetch_wp_categories() if not dry_run else [
-        {"id": 1, "name": "Hidden Face Girl Pic"},
-        {"id": 2, "name": "Sad Girl DP"},
-        {"id": 3, "name": "Attitude Girl DP"},
-        {"id": 4, "name": "Aesthetic Girl DP"},
+        {"id": 1, "name": "Radha Krishna Images"},
+        {"id": 2, "name": "Radha Krishna Photo"},
+        {"id": 3, "name": "Radha Krishna Wallpaper"},
+        {"id": 4, "name": "Radha Krishna Drawing"},
         {"id": 5, "name": "Trending"},
     ]
 
@@ -996,7 +996,7 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
             return
     else:
         all_media = [
-            {"id": i, "source_url": f"https://pixlino.com/wp-content/img{i}.jpg", "alt_text": "girl dp"}
+            {"id": i, "source_url": f"https://radhakrishnaphoto.in/wp-content/img{i}.jpg", "alt_text": "Radha Krishna Photo"}
             for i in range(1, 500)
         ]
 
@@ -1004,9 +1004,9 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
 
     # ── Fetch recent posts for internal linking (once per run) ───
     recent_posts_for_links = fetch_recent_posts_for_links(count=5) if not dry_run else [
-        {"title": "Hidden Face Girl Pic", "link": "https://pixlino.com/hidden-face-girl-pic/"},
-        {"title": "Sad Girl DP", "link": "https://pixlino.com/sad-girl-dp/"},
-        {"title": "Attitude Girl DP", "link": "https://pixlino.com/attitude-girl-dp/"},
+        {"title": "Radha Rani Photo", "link": "https://radhakrishnaphoto.in/radha-rani-photo/"},
+        {"title": "Radha Krishna Wallpaper", "link": "https://radhakrishnaphoto.in/krishna-photo-wallpaper/"},
+        {"title": "Radha Krishna Photo", "link": "https://radhakrishnaphoto.in/radha-krishna-love-black-wallpaper/"},
     ]
 
     # ── Track in-run progress per keyword ────────────────────
@@ -1071,7 +1071,7 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
 
             STATS.posts_created.append({
                 "title":        title,
-                "link":         f"https://pixlino.com/{slug}/",
+                "link":         f"https://radhakrishnaphoto.in/{slug}/",
                 "category":     cat_name,
                 "keyword":      kw,
                 "post_num":     f"post {post_num}/{POSTS_PER_KEYWORD}",

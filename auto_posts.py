@@ -949,20 +949,22 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
     log(f"Loaded progress for {len(used_keywords_dict)} keywords from {USED_KEYWORDS_FILE}")
 
     # ── Categories ────────────────────────────────────────────
-    log("Fetching WordPress categories...")
-    categories = fetch_wp_categories() if not dry_run else [
-        {"id": 1, "name": "Radha Krishna Images"},
-        {"id": 2, "name": "Radha Krishna Photo"},
-        {"id": 3, "name": "Radha Krishna Wallpaper"},
-        {"id": 4, "name": "Radha Krishna Drawing"},
-        {"id": 5, "name": "Trending"},
-    ]
+    # ── Categories (STATIC — FIX NETWORK ISSUE) ────────────────
+    log("Using static categories (API bypass)")
+        categories = [
+          {"id": 13, "name": "Baby Krishna Images"},
+          {"id": 4, "name": "Radha Krishna DP"},
+          {"id": 2, "name": "Radha Krishna Drawing"},
+          {"id": 12, "name": "Radha Krishna Images"},
+          {"id": 8, "name": "Radha Krishna Photo"},
+          {"id": 15, "name": "Radha Krishna Wallpaper"},
+  ]
 
-    if not categories:
-        msg = "❌ ERROR: Could not fetch WordPress categories. Check your credentials."
-        log(msg)
-        send_telegram(msg)
-        return
+    # if not categories:
+    #     msg = "❌ ERROR: Could not fetch WordPress categories. Check your credentials."
+    #     log(msg)
+    #     send_telegram(msg)
+    #     return
 
     # ── Build queue ───────────────────────────────────────────
     log("Building post queue from keywords...")

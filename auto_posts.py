@@ -948,18 +948,17 @@ def run(posts_to_create=POSTS_PER_RUN, dry_run=False, skip_sleep=False):
     used_keywords_dict = load_used_keywords()
     log(f"Loaded progress for {len(used_keywords_dict)} keywords from {USED_KEYWORDS_FILE}")
 
+    
     # ── Categories ────────────────────────────────────────────
-    # ── Categories (STATIC — FIX NETWORK ISSUE) ────────────────
-# ── Categories (STATIC — FIX NETWORK ISSUE) ────────────────
-log("Using static categories (API bypass)")
-categories = [
-    {"id": 13, "name": "Baby Krishna Images"},
-    {"id": 4, "name": "Radha Krishna DP"},
-    {"id": 2, "name": "Radha Krishna Drawing"},
-    {"id": 12, "name": "Radha Krishna Images"},
-    {"id": 8, "name": "Radha Krishna Photo"},
-    {"id": 15, "name": "Radha Krishna Wallpaper"},
-]
+    log("Using static categories (API bypass)")
+    categories = [
+        {"id": 13, "name": "Baby Krishna Images"},
+        {"id": 4, "name": "Radha Krishna DP"},
+        {"id": 2, "name": "Radha Krishna Drawing"},
+        {"id": 12, "name": "Radha Krishna Images"},
+        {"id": 8, "name": "Radha Krishna Photo"},
+        {"id": 15, "name": "Radha Krishna Wallpaper"},
+    ]
 
     # if not categories:
     #     msg = "❌ ERROR: Could not fetch WordPress categories. Check your credentials."

@@ -1,0 +1,83 @@
+name: Daily RadhaKrishnaPhoto Posts
+
+# Runs every day at 9 AM IST (3:30 AM UTC)
+on:
+  schedule:
+    - cron: '30 3 * * *'  # 9:30 AM IST
+  
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      posts:
+        description: 'Number of posts to create'
+        required: false
+        default: '2'
+      dry_run:
+        description: 'Dry run mode (test without publishing)'
+        required: false
+        default: 'false'
+
+jobs:
+  publish-posts:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run automation (scheduled)
+        if: github.event_name == 'schedule'
+        env:
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python auto_posts.py --skip-sleep
+
+      - name: Run automation (manual with custom settings)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          POSTS="${{ github.event.inputs.posts }}"
+          DRY_RUN="${{ github.event.inputs.dry_run }}"
+          
+          if [ "$DRY_RUN" == "true" ]; then
+            python auto_posts.py --posts "$POSTS" --dry-run --skip-sleep
+          else
+            python auto_posts.py --posts "$POSTS" --skip-sleep
+          fi
+
+      - name: Upload logs as artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: execution-logs
+          path: logs/
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ ! -z "$TELEGRAM_BOT_TOKEN" ] && [ ! -z "$TELEGRAM_CHAT_ID" ]; then
+            curl -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage \
+              -d "chat_id=${TELEGRAM_CHAT_ID}" \
+              -d "text=❌ RadhaKrishnaPhoto Automation FAILED on $(date). Check GitHub Actions logs."
+          fi

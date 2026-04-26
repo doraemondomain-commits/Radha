@@ -881,8 +881,21 @@ def create_wp_post(title, slug, content, category_id, focus_kw, meta_desc):
         }
     }
     try:
-        r      = requests.post(f"{WP_URL}/posts", json=data, auth=AUTH, timeout=30)
-        result = r.json()
+        r = requests.post(
+    f"{WP_URL}/posts",
+    json=data,
+    auth=AUTH,
+    timeout=30
+)
+
+log(f"  DEBUG STATUS: {r.status_code}")
+
+try:
+    result = r.json()
+except Exception as e:
+    log(f"  ✗ JSON decode error: {e}")
+    log(f"  ✗ RAW RESPONSE:\n{r.text[:1000]}")
+    return None, ""
 
         if r.status_code not in (200, 201):
             log(f"  ✗ WP API error {r.status_code}")

@@ -23,7 +23,8 @@
 # ============================================================
 
 name: Auto WordPress Posts
-
+permissions:
+  contents: write
 on:
   schedule:
     - cron: "30 0 * * 1"   # Monday    → 6:00 AM IST
